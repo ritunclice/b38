@@ -65,27 +65,7 @@
             width: 100%;
         }
 
-        /* --- Magic Cursor --- */
-        .cursor-dot,
-        .cursor-outline {
-            position: fixed;
-            top: 0; left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 99999;
-            pointer-events: none;
-        }
-        .cursor-dot { width: 8px; height: 8px; background-color: var(--primary); }
-        .cursor-outline { width: 40px; height: 40px; border: 2px solid var(--primary); transition: opacity 0.3s; }
-        
-        @media (max-width: 991px) {
-            .cursor-dot, .cursor-outline { display: none; }
-            body { cursor: auto !important; }
-        }
-        @media (min-width: 992px) {
-            body { cursor: none; }
-            a, button, .card, input { cursor: none; }
-        }
+
 
         /* --- Animated Gradient Text --- */
         .animate-text {
@@ -314,9 +294,7 @@
 </head>
 <body>
 
-<!-- Magic Cursor -->
-<div class="cursor-dot"></div>
-<div class="cursor-outline"></div>
+
 
 <!-- Background Orbs -->
 <div class="orb orb-1"></div>
@@ -392,21 +370,24 @@
     </div>
     <div class="team-grid">
         <div class="employee-card reveal">
-            <img src="https://ui-avatars.com/api/?name=CEO&background=00d2ff&color=000&size=200" alt="CEO" class="employee-img">
-            <h3>Md. Abdullah</h3><span>Founder & CEO</span>
+            <img src="images/prodip.jpg" alt="CEO" class="employee-img">
+            <h3>Prodip Pal</h3><span>Founder & CEO</span>
         </div>
         <div class="employee-card reveal">
-            <img src="https://ui-avatars.com/api/?name=Lead+Dev&background=3a7bd5&color=fff&size=200" alt="CTO" class="employee-img">
-            <h3>Tanvir Ahmed</h3><span>Chief Tech Officer</span>
+            <img src="images/lemon.jpg" alt="CEO" class="employee-img">  
+            <h3>Tanvir Lemon</h3><span>Head of Design</span>
         </div>
         <div class="employee-card reveal">
-            <img src="https://ui-avatars.com/api/?name=Designer&background=00d2ff&color=000&size=200" alt="UI Designer" class="employee-img">
-            <h3>Sara Khan</h3><span>Head of Design</span>
+            <img src="images/prohor.jpg" alt="CEO" class="employee-img"> 
+            <h3>Abdur Rahman</h3><span>Project Manager</span>
         </div>
         <div class="employee-card reveal">
-            <img src="https://ui-avatars.com/api/?name=Manager&background=3a7bd5&color=fff&size=200" alt="Manager" class="employee-img">
-            <h3>Rahat Kabir</h3><span>Project Manager</span>
+            <img src="images/showmin.jpg" alt="CEO" class="employee-img">          
+            <h3>Raisul Showmin</h3><span>Full Stack Developer</span>
         </div>
+        <div class="employee-card reveal">
+            <img src="images/rana.jpg" alt="CEO" class="employee-img">          
+            <h3>Asaduzzaman Rana</h3><span>Full Stack Developer</span>
     </div>
 </section>
 
@@ -527,18 +508,7 @@
         });
     }
 
-    // Magic Cursor
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
-    window.addEventListener('mousemove', (e) => {
-        cursorDot.style.left = `${e.clientX}px`;
-        cursorDot.style.top = `${e.clientY}px`;
-        cursorOutline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
-    });
-    document.querySelectorAll('a, button, .card').forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-    });
+
 
     // Typing Effect
     const textElement = document.querySelector('.type-text');
